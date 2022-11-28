@@ -42,19 +42,14 @@
     color: rgb(1, 1, 41);
     font-family: 'Manrope';
     text-align: center;
-
-}
-
-.listitems a{
-    text-decoration: none;
-    color: rgb(1, 1, 41);
+    transition: all 0.5ms ease-in-out;
     font-weight: 500;
     font-size: 16px;
-    transition: all 0.5ms ease-in-out;
     
 }
 
-.listitems a:hover{
+
+.listitems:hover{
     color: #0f639b;
     font-weight: 500;
     border-bottom: 2px solid  rgb(1, 1, 41);
@@ -70,11 +65,7 @@
     border: solid 2px skyblue;
 }
 
-.bars {
 
-    display: none;
-
-}
 
 @media screen and (max-width: 600px) {
     .homeNav {
@@ -100,33 +91,20 @@
     }
 
     .list {
-        /* display: none; */
-        position: absolute;
-        top: 65px;
-        margin: auto;
-        left: 0;
+        position: relative;
         flex-direction: column;
-        width: 100%;
-        /* height: calc(100vh - 77px); */
-        background-color: white;
-        border-top: 1px solid black;
-    }
-
-    .expand{
-        display: block;
+        background-color: rgba(238, 238, 238, 0.308);
+        border-top: 1px solid black;        
 
     }
 
     .listitems {
         font: lighter;
         margin: 1px 30px;
-        /* color: black; */
         font-family: 'Manrope';
         text-align: center;
     }
-    .listitems:hover {
-        background-color: #eee;
-      }
+      
 
     .cryptoBtn {
         margin: auto;
@@ -134,10 +112,6 @@
         border-radius: 4px;
         border: solid 2px skyblue;
     }
-    .bars{
-        display: block;
-        margin: auto 10px;
-        cursor: pointer;
-    }
+
 
 }
