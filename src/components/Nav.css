@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap');
+
+.homeNav {
+    margin-left: 0px;
+    margin-right: 0px;
+    padding: 4px 0px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.logobox {
+    margin: 0px auto 10px 0px;
+    width: 80px;
+    height: 80px;
+}
+
+.logo {
+    margin: 0px;
+    width: 100px;
+    height: 100px;
+}
+
+.list {
+
+    margin: 1px auto;
+    padding: 5px;
+    list-style-type: none;
+    color: rgb(1, 1, 41);
+    font-size:15px ;
+    font-weight: 600;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-items: center;
+
+}
+
+.listitems {
+    font: lighter;
+    margin: 1px 30px;
+    color: rgb(1, 1, 41);
+    font-family: 'Manrope';
+    text-align: center;
+
+}
+
+.listitems a{
+    text-decoration: none;
+    color: rgb(1, 1, 41);
+    font-weight: 500;
+    font-size: 16px;
+    transition: all 0.5ms ease-in-out;
+    
+}
+
+.listitems a:hover{
+    color: #0f639b;
+    font-weight: 500;
+    border-bottom: 2px solid  rgb(1, 1, 41);
+    font-size: 16px;
+    
+}
+.cryptoBtn {
+    margin: auto;
+    padding: 10px 25px;
+    border-radius: 4px;
+    font-weight: 600;
+    color: rgb(1, 1, 41);
+    border: solid 2px skyblue;
+}
+
+.bars {
+
+    display: none;
+
+}
+
+@media screen and (max-width: 600px) {
+    .homeNav {
+        margin-left: 0px;
+        margin-right: 0px;
+        padding: 4px 0px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+    }
+
+    .logobox {
+        margin: 0px auto 10px 0px;
+        width: 40px;
+        height: 60px;
+    }
+
+    .logo {
+        margin: 0px;
+        width: 100px;
+        height: 70px;
+    }
+
+    .list {
+        /* display: none; */
+        position: absolute;
+        top: 65px;
+        margin: auto;
+        left: 0;
+        flex-direction: column;
+        width: 100%;
+        /* height: calc(100vh - 77px); */
+        background-color: white;
+        border-top: 1px solid black;
+    }
+
+    .expand{
+        display: block;
+
+    }
+
+    .listitems {
+        font: lighter;
+        margin: 1px 30px;
+        /* color: black; */
+        font-family: 'Manrope';
+        text-align: center;
+    }
+    .listitems:hover {
+        background-color: #eee;
+      }
+
+    .cryptoBtn {
+        margin: auto;
+        padding: 10px 25px;
+        border-radius: 4px;
+        border: solid 2px skyblue;
+    }
+    .bars{
+        display: block;
+        margin: auto 10px;
+        cursor: pointer;
+    }
+
+}

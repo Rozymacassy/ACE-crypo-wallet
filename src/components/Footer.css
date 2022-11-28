@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap');
+
+.footerContainer {
+    max-width: 100%;
+
+}
+
+.footer1 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.brand h5,
+.contact h5,
+.hire h5 {
+    color: rgb(1, 1, 41);
+    font-size: 24px;
+    font-weight: 600;
+}
+.footer-text {
+    font-size: 17px;
+    font-weight: 500;
+    margin: 0 10px;
+    color: rgb(1, 1, 41);
+
+}
+
+.footer2 {
+    display: flex;
+    margin-bottom: 2em;
+
+}
+
+.term {
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+    color: rgb(1, 1, 41);
+    font-size: 14px;
+    font-weight: 600;
+    padding: 2px;
+
+}
+
+.term-item {
+    padding: 0 10px;
+}
+
+.icons {
+    display: flex;
+    margin: 0 auto;
+    list-style-type: none;
+
+}
+
+.icon-item {
+    padding: 0 10px;
+}
+
+@media screen and (max-width: 600px) {
+
+    .brand h5,
+    .contact h5,
+    .hire h5 {
+        color: rgb(1, 1, 41);
+        font-size: 19px;
+        font-weight: 600;
+    }
+
+    .footer-text {
+        font-size: 14px;
+        font-weight: 500;
+        margin: 0 10px;
+        color: rgb(1, 1, 41);
+
+    }
+
+    .footer2 {
+        display: flex;
+        flex-direction: column;
+
+    }
+}
