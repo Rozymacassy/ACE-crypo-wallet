@@ -1,12 +1,11 @@
-ACE-crypo-wallet
 
-# ACE crypto wallet
+# ACE crypto wallet 💹
 
 - ACE is a decentralized web-based crypto wallet system that allows its users to buy, send/receive ether from anywhere, also allows users to borrow crypto using their owned digital assets as collateral till they are able to pay back, and it allows for the management of both ERC20 and ERC 721 tokens. ACE would be built using ether.js and react to be deployed on the Polygon Blockchain network.
 
-## Link 🙏
+## Link 🔗🔗
 
-- [ACE crypto wallet](https://www.figma.com/file/2XVDWDuscHHI2ONUcORrD3/t.design?node-id=0%3A3&t=uG45wYRh3oMZ6JI4-0)
+- [ACE crypto wallet Figma Design](https://www.figma.com/file/2XVDWDuscHHI2ONUcORrD3/t.design?node-id=0%3A3&t=uG45wYRh3oMZ6JI4-0)
 <!-- - [Awesome README](https://github.com/matiassingers/awesome-readme)
 - [How to write a Good readme](https://readme.so/editor) -->
 
