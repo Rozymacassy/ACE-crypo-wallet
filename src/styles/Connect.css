@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap');
+
+.connect{
+    width: 100%;
+    display: flex;
+    margin: 0 auto;
+    justify-content: center;
+}
+
+.import,
+.create {
+    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
+    border: #eee;
+
+}
+
+h1 {
+    color: rgb(1, 1, 41);
+    font-family: 'manrope';
+    font-size: 35px;
+    font-weight: 600;
+}
+
+.connect-text2 {
+    color: rgb(1, 1, 41);
+    font-family: 'manrope';
+    font-weight: 400;
+}
+
+.connect-text {
+    color: rgb(1, 1, 41);
+    font-family: 'manrope';
+    font-weight: 600;
+
+}

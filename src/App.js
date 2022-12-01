@@ -2,7 +2,9 @@ import './styles/App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Home from './components/Home';
 // import Nav from './components/Nav';
-import Welcome from './components/Welcome';
+import Connect from './pages/Connect';
+import Welcome from './pages/Welcome';
+import Dashboard from './pages/Dashboard';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 function App() {
@@ -16,14 +18,16 @@ function App() {
         <Routes>
           <Route exact path="/" element={<Home />} />
           <Route exact path="/Welcome" element={<Welcome />} />
-          
-          {/* <Route path="/tasks" element={<Tasks />} />
-          <Route path="/nftlisting" element={<ListNft />} />
-          <Route path="/mint" element={<Content />} /> */}
+          <Route exact path="/page/Connect" element={<Connect />} />
+          <Route exact path="/page/Dashboard" element={<Dashboard />} />
+
+
+
+
         </Routes>
 
-     
- 
+
+
       </div>
 
     </Router>
