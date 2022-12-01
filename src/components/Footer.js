@@ -1,5 +1,5 @@
 import React from "react";
-import './Footer.css';
+import '../styles/Footer.css';
 import { AiFillTwitterCircle } from 'react-icons/ai';
 import { GrYoutube } from 'react-icons/gr';
 import { TiSocialInstagramCircular } from 'react-icons/ti';

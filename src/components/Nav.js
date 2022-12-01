@@ -1,8 +1,13 @@
 import React from "react";
-import "./Nav.css";
+import "../styles/Nav.css";
+import 'bootstrap/dist/css/bootstrap.min.css'
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
+import {LinkContainer} from 'react-router-bootstrap';
+import Button from 'react-bootstrap/Button';
+
+
 
 function CollapsibleExample() {
   return (
@@ -16,13 +21,15 @@ function CollapsibleExample() {
           </Nav>
 
           <Nav >
-            
-          <Nav.Link href="#home" className="listitems">Home</Nav.Link>
-            <Nav.Link href="#about" className="listitems">About</Nav.Link>
-            <Nav.Link href="#features" className="listitems">Features</Nav.Link>
-            <Nav.Link href="#FAQ" className="listitems">FAQ</Nav.Link>
+            <LinkContainer to="/"> 
+          <Nav.Link className="listitems">Home</Nav.Link>
+           </LinkContainer> 
+            <Nav.Link className="listitems">About</Nav.Link>
+            <Nav.Link className="listitems">Features</Nav.Link>
+            <Nav.Link className="listitems">FAQ</Nav.Link>
             <Nav.Link href="#documentation" className="listitems">Documentation</Nav.Link>
-            <button className="cryptoBtn">My Crypto</button>
+            <Button variant="primary" size="md">My Crypto</Button>
+
           </Nav>
         </Navbar.Collapse>
       </Container>
