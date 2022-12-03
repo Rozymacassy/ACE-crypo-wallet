@@ -2,6 +2,19 @@ import { useState, useEffect } from "react";
 import { ethers } from "ethers";
 import erc20abi from "../Erc20Abi.json";
 import TxList from "../Txlist";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import "../styles/Wallet.css";
+import Container from 'react-bootstrap/Container';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
+import {LinkContainer} from 'react-router-bootstrap';
+import Button from 'react-bootstrap/Button';
+
+// import Nav from '../components/Nav';
+
+
+
+
 
 const Wallet = () => {
   const [txs, setTxs] = useState([]);
@@ -114,16 +127,41 @@ const Wallet = () => {
   };
 
   return (
-    <div className="grid grid-cols-1 gap-2 md:grid-cols-2">
+    <div className=" container grid grid-cols-1 gap-2 md:grid-cols-2">
+   <Navbar collapseOnSelect expand="lg" bg="" variant="dark" className="homeNav">
+      <Container>
+        <Navbar.Brand href="#home" className="logobox"><img src="../images/ace-logo.svg" alt="logo" className="logo" />
+</Navbar.Brand>
+        <Navbar.Toggle aria-controls="responsive-navbar-nav"  />
+        <Navbar.Collapse id="responsive-navbar-nav" className="list">
+          <Nav className="me-auto">
+          </Nav>
+
+          <Nav >
+            <LinkContainer to="/"> 
+          <Nav.Link className="listitems">Home</Nav.Link>
+           </LinkContainer> 
+            <Nav.Link className="listitems">About</Nav.Link>
+            <Nav.Link className="listitems">Features</Nav.Link>
+            <Nav.Link className="listitems">FAQ</Nav.Link>
+            <Nav.Link href="#documentation" className="listitems">Documentation</Nav.Link>
+            <LinkContainer to="/page/connect"> 
+            <Button variant="primary" size="md">My Crypto</Button>
+            </LinkContainer>
+          </Nav>
+        </Navbar.Collapse>
+      </Container>
+
+    </Navbar>
       <div>
-        <form className="m-4" onSubmit={handleSubmit}>
-          <div className="credit-card w-full lg:w-3/4 sm:w-auto shadow-lg mx-auto rounded-xl bg-white">
-            <main className="mt-4 p-4">
+        <form className="m-4 " onSubmit={handleSubmit}>
+          <div className="credit-card w-75 lg:w-3/4 sm:w-auto shadow-lg mx-auto rounded-xl">
+            <main className="mt-4 rounded-top box p-4">
               <h1 className="text-xl font-semibold text-gray-700 text-center">
-                THE ACE WALLET
+                ACE WALLET
               </h1>
               <div className="">
-                <h1>
+                <h1 className="cont-add">
                   Erc20 contract address:
                   0xc3c79EEe9530754bc3A2d2C9F1A8Cf139C5de28C
                 </h1>
@@ -137,16 +175,16 @@ const Wallet = () => {
                 </div>
               </div>
             </main>
-            <footer className="p-4">
+            <footer className="box  p-4 ">
               <button
                 type="submit"
                 className="btn btn-primary submit-button focus:ring focus:outline-none w-full">
                 Get token info
               </button>
             </footer>
-            <div className="px-4">
-              <div className="overflow-x-auto">
-                <table className="table w-full">
+            <div className="box  px-4">
+              <div className="  overflow-x-auto">
+                <table className=" table w-full">
                   <thead>
                     <tr>
                       <th>Name</th>
@@ -154,7 +192,7 @@ const Wallet = () => {
                       <th>Total supply</th>
                     </tr>
                   </thead>
-                  <tbody>
+                  <tbody className="box ">
                     <tr>
                       <th>{contractInfo.tokenName}</th>
                       <td>{contractInfo.tokenSymbol}</td>
@@ -165,7 +203,7 @@ const Wallet = () => {
                 </table>
               </div>
             </div>
-            <div className="p-4">
+            <div className="box p-4">
               <button
                 onClick={getMyBalance}
                 type="submit"
@@ -173,7 +211,7 @@ const Wallet = () => {
                 Get token balance
               </button>
             </div>
-            <div className="px-4">
+            <div className="box rounded-bottom px-4">
               <div className="overflow-x-auto">
                 <table className="table w-full">
                   <thead>
@@ -193,8 +231,8 @@ const Wallet = () => {
             </div>
           </div>
         </form>
-        <div className="m-4 credit-card w-full lg:w-3/4 sm:w-auto shadow-lg mx-auto rounded-xl bg-white">
-          <div className="mt-4 p-4">
+        <div className=" m-4 credit-card w-75 lg:w-3/4 sm:w-auto shadow-lg mx-auto rounded-xl ">
+          <div className="box rounded mt-4 p-4">
             <h1 className="text-xl font-semibold text-gray-700 text-center">
               Buy Ace token
             </h1>
@@ -268,8 +306,8 @@ const Wallet = () => {
         </div>
       </div>
       <div>
-        <div className="m-4 credit-card w-full lg:w-3/4 sm:w-auto shadow-lg mx-auto rounded-xl bg-white">
-          <div className="mt-4 p-4">
+        <div className="m-4 credit-card w-75 lg:w-3/4 sm:w-auto shadow-lg mx-auto rounded-xl ">
+          <div className=" box rounded mt-4 p-4">
             <h1 className="text-xl font-semibold text-gray-700 text-center">
               Recent transactions
             </h1>

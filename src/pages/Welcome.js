@@ -6,8 +6,8 @@ import { Link } from "react-router-dom";
 
 const Welcome = () => {
     return (
-        <div className="container wlc-container">
-            <img src="images/ace-logo.svg" alt="ace-logo" />
+        <div className=" wlc-container">
+            <img src="images/ace-logo.svg" alt="ace-logo" className="a-logo" />
 
             <div className="wlc-body">
                 <h2 className="wlc">Welcome! to Ace</h2>
