@@ -12,7 +12,7 @@ const Welcome = () => {
             <div className="wlc-body">
                 <h2 className="wlc">Welcome! to Ace</h2>
                 <p className="wlc-para">Let's connect you to the Decentralized web</p>
-                <Link to="/page/Connect">
+                <Link to="/page/Wallet">
                     <div className="mb-2 mt-5">
 
                         <Button variant="primary" size="lg">Connect</Button>
