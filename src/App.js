@@ -5,11 +5,11 @@ import Home from './components/Home';
 import Connect from './pages/Connect';
 import Welcome from './pages/Welcome';
 import Dashboard from './pages/Dashboard';
+import Wallet from './pages/Wallet';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 function App() {
   return (
-
     <Router>
       <div className="App">
         {/* <Nav /> */}
@@ -20,16 +20,9 @@ function App() {
           <Route exact path="/Welcome" element={<Welcome />} />
           <Route exact path="/page/Connect" element={<Connect />} />
           <Route exact path="/page/Dashboard" element={<Dashboard />} />
-
-
-
-
+          <Route exact path="/page/Wallet" element={<Wallet />} />
         </Routes>
-
-
-
       </div>
-
     </Router>
   );
 }
