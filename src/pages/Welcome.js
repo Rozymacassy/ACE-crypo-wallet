@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 
 const Welcome = () => {
     return (
-        <div className="wlc-container">
+        <div className="container wlc-container">
             <img src="images/ace-logo.svg" alt="ace-logo" />
 
             <div className="wlc-body">

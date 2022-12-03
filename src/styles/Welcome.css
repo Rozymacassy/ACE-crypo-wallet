@@ -6,7 +6,7 @@
     border: 1px solid #eee;
     margin: 20px;
     border-radius: 20px;
-    width: 50%;
+    max-width: 50%;
     height: 50%;
     display: block;
     margin: 6em auto;
