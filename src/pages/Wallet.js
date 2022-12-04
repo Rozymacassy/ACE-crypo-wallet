@@ -144,7 +144,8 @@ const Wallet = () => {
             <Nav.Link className="listitems">About</Nav.Link>
             <Nav.Link className="listitems">Features</Nav.Link>
             <Nav.Link className="listitems">FAQ</Nav.Link>
-            <Nav.Link href="#documentation" className="listitems">Documentation</Nav.Link>
+            <Nav.Link href="#documentation
+            " className="listitems">Documentation</Nav.Link>
             <LinkContainer to="/page/connect"> 
             <Button variant="primary" size="md">My Crypto</Button>
             </LinkContainer>
