@@ -2,21 +2,33 @@ import { useState, useEffect } from "react";
 import { ethers } from "ethers";
 import erc20abi from "../Erc20Abi.json";
 import TxList from "../Txlist";
-import 'bootstrap/dist/css/bootstrap.min.css';
+import "bootstrap/dist/css/bootstrap.min.css";
 import "../styles/Wallet.css";
-import Container from 'react-bootstrap/Container';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
-import {LinkContainer} from 'react-router-bootstrap';
-import Button from 'react-bootstrap/Button';
+import Table from "@mui/material/Table";
+import TableBody from "@mui/material/TableBody";
+import TableCell from "@mui/material/TableCell";
+import TableContainer from "@mui/material/TableContainer";
+import TableHead from "@mui/material/TableHead";
+import TableRow from "@mui/material/TableRow";
+import Paper from "@mui/material/Paper";
+import { Link } from "react-router-dom";
+import Sidebar from "../components/Sidebar"
 
 // import Nav from '../components/Nav';
 
-
-
-
-
 const Wallet = () => {
+  function createData(name, calories, fat, carbs, protein) {
+    return { name, calories, fat, carbs, protein };
+  }
+
+  const rows = [
+    createData("Frozen yoghurt", 159, 6.0, 24, 4.0),
+    createData("Ice cream sandwich", 237, 9.0, 37, 4.3),
+    createData("Eclair", 262, 16.0, 24, 6.0),
+    createData("Cupcake", 305, 3.7, 67, 4.3),
+    createData("Gingerbread", 356, 16.0, 49, 3.9),
+  ];
+
   const [txs, setTxs] = useState([]);
   const [contractListened, setContractListened] = useState();
   const [error, setError] = useState("");
@@ -127,194 +139,91 @@ const Wallet = () => {
   };
 
   return (
-    <div className=" container grid grid-cols-1 gap-2 md:grid-cols-2">
-   <Navbar collapseOnSelect expand="lg" bg="" variant="dark" className="homeNav">
-      <Container>
-        <Navbar.Brand href="#home" className="logobox"><img src="../images/ace-logo.svg" alt="logo" className="logo" />
-</Navbar.Brand>
-        <Navbar.Toggle aria-controls="responsive-navbar-nav"  />
-        <Navbar.Collapse id="responsive-navbar-nav" className="list">
-          <Nav className="me-auto">
-          </Nav>
-
-          <Nav >
-            <LinkContainer to="/"> 
-          <Nav.Link className="listitems">Home</Nav.Link>
-           </LinkContainer> 
-            <Nav.Link className="listitems">About</Nav.Link>
-            <Nav.Link className="listitems">Features</Nav.Link>
-            <Nav.Link className="listitems">FAQ</Nav.Link>
-            <Nav.Link href="#documentation
-            " className="listitems">Documentation</Nav.Link>
-            <LinkContainer to="/page/connect"> 
-            <Button variant="primary" size="md">My Crypto</Button>
-            </LinkContainer>
-          </Nav>
-        </Navbar.Collapse>
-      </Container>
-
-    </Navbar>
+    <div className="wallet">
       <div>
-        <form className="m-4 " onSubmit={handleSubmit}>
-          <div className="credit-card w-75 lg:w-3/4 sm:w-auto shadow-lg mx-auto rounded-xl">
-            <main className="mt-4 rounded-top box p-4">
-              <h1 className="text-xl font-semibold text-gray-700 text-center">
-                ACE WALLET
-              </h1>
-              <div className="">
-                <h1 className="cont-add">
-                  Erc20 contract address:
-                  0xc3c79EEe9530754bc3A2d2C9F1A8Cf139C5de28C
-                </h1>
-                <div className="my-3">
-                  <input
-                    type="text"
-                    name="addr"
-                    className="input input-bordered block w-full focus:ring focus:outline-none"
-                    placeholder="ERC20 contract address"
-                  />
+        <div className="wallet-container">
+          <Sidebar />
+          <div className="main-container">
+            <div className="top-container">
+              <div className="top">
+                <div className="total">
+                  <p>Total Balance</p>
+                  <h2>NGN 500,000,000</h2>
+                </div>
+                <div className="fiat-btn">
+                  <Link to="/page/DepositFiat">
+                    <button>Deposit Fiat</button>
+                  </Link>
                 </div>
               </div>
-            </main>
-            <footer className="box  p-4 ">
-              <button
-                type="submit"
-                className="btn btn-primary submit-button focus:ring focus:outline-none w-full">
-                Get token info
-              </button>
-            </footer>
-            <div className="box  px-4">
-              <div className="  overflow-x-auto">
-                <table className=" table w-full">
-                  <thead>
-                    <tr>
-                      <th>Name</th>
-                      <th>Symbol</th>
-                      <th>Total supply</th>
-                    </tr>
-                  </thead>
-                  <tbody className="box ">
-                    <tr>
-                      <th>{contractInfo.tokenName}</th>
-                      <td>{contractInfo.tokenSymbol}</td>
-                      <td>{String(contractInfo.totalSupply)}</td>
-                      <td>{contractInfo.deployedAt}</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-            <div className="box p-4">
-              <button
-                onClick={getMyBalance}
-                type="submit"
-                className="btn btn-primary submit-button focus:ring focus:outline-none w-full">
-                Get token balance
-              </button>
-            </div>
-            <div className="box rounded-bottom px-4">
-              <div className="overflow-x-auto">
-                <table className="table w-full">
-                  <thead>
-                    <tr>
-                      <th>Address</th>
-                      <th>Balance</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <th>{balanceInfo.address}</th>
-                      <td>{balanceInfo.balance}</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-          </div>
-        </form>
-        <div className=" m-4 credit-card w-75 lg:w-3/4 sm:w-auto shadow-lg mx-auto rounded-xl ">
-          <div className="box rounded mt-4 p-4">
-            <h1 className="text-xl font-semibold text-gray-700 text-center">
-              Buy Ace token
-            </h1>
 
-            <form onSubmit={handleTransfer}>
-              <div className="price">
-                <input
-                  type="text"
-                  name="amout"
-                  className="input input-bordered block w-full focus:ring focus:outline-none"
-                  placeholder="Enter amount in Naira"
-                />
+              <div className="purchase-row">
+                <div className="crypto-purchase">
+                  <img src="../images/buy.png" alt="crypyo" className="w-100" />
+                  <Link to="/page/BuyCrypto">
+                    <p>Buy Ace Token</p>
+                  </Link>
+                </div>
+                <div className="crypto-purchase">
+                  <img
+                    src="../images/sell.png"
+                    alt="crypyo"
+                    className="w-100"
+                  />
+                  <Link to="/page/BuyCrypto">
+                    <p>Sell Ace Token</p>
+                  </Link>
+                </div>
+                <div className="crypto-purchase">
+                  <img
+                    src="../images/loan.png"
+                    alt="crypyo"
+                    className="w-100"
+                  />
+                  <Link to="/page/BuyCrypto">
+                    <p>Loan Ace Token</p>
+                  </Link>
+                </div>
               </div>
-              <div className="my-3">
-                <input
-                  type="text"
-                  name="recipient"
-                  className="input input-bordered block w-full focus:ring focus:outline-none"
-                  placeholder="Recipient address"
-                />
-              </div>
-              <div className="my-3">
-                <input
-                  type="text"
-                  name="amount"
-                  className="input input-bordered block w-full focus:ring focus:outline-none"
-                  placeholder="Token to transfer"
-                />
-              </div>
-              <footer className="p-4">
-                <button
-                  type="submit"
-                  className="btn btn-primary submit-button focus:ring focus:outline-none w-full">
-                  Transfer
-                </button>
-              </footer>
-            </form>
+            </div>
 
-            <div className="price">
-              <input
-                type="text"
-                name="amout"
-                className="input input-bordered block w-full focus:ring focus:outline-none"
-                placeholder="Enter amount in Recieve"
-              />
+            <div className="Assets-record">
+              <div className="Assets-record-header">
+                <p>ASSETS</p>
+                <div className="Assets-record-toggle">
+                  <button>TOKENS</button>
+                  <button>NFTs</button>
+                </div>
+              </div>
+              <>
+                <TableContainer component={Paper}>
+                  <Table sx={{ minWidth: 650 }} aria-label="simple table">
+                    <TableHead>
+                      <TableRow>
+                        <TableCell>Tokens</TableCell>
+                        <TableCell align="right">Price</TableCell>
+                        <TableCell align="right">Balance</TableCell>
+                      </TableRow>
+                    </TableHead>
+                    <TableBody>
+                      {rows.map((row) => (
+                        <TableRow
+                          key={row.name}
+                          sx={{
+                            "&:last-child td, &:last-child th": { border: 0 },
+                          }}>
+                          <TableCell component="th" scope="row">
+                            {row.name}
+                          </TableCell>
+                          <TableCell align="right">{row.calories}</TableCell>
+                          <TableCell align="right">{row.fat}</TableCell>
+                        </TableRow>
+                      ))}
+                    </TableBody>
+                  </Table>
+                </TableContainer>
+              </>
             </div>
-            <div className="my-3">
-              <input
-                type="text"
-                name="recipient"
-                className="input input-bordered block w-full focus:ring focus:outline-none"
-                placeholder="Recipient address"
-              />
-            </div>
-            <div className="my-3">
-              <input
-                type="text"
-                name="amount"
-                className="input input-bordered block w-full focus:ring focus:outline-none"
-                placeholder="Amount to recieve"
-              />
-            </div>
-            <footer className="p-4">
-              <button
-                onClick={connectWallet}
-                className="btn btn-primary submit-button focus:ring focus:outline-none w-full">
-                Recieve Ace Token from an external address
-              </button>
-            </footer>
-          </div>
-        </div>
-      </div>
-      <div>
-        <div className="m-4 credit-card w-75 lg:w-3/4 sm:w-auto shadow-lg mx-auto rounded-xl ">
-          <div className=" box rounded mt-4 p-4">
-            <h1 className="text-xl font-semibold text-gray-700 text-center">
-              Recent transactions
-            </h1>
-            <p>
-              <TxList txs={txs} />
-            </p>
           </div>
         </div>
       </div>

@@ -1,0 +1,14 @@
+.CryptoPurchase{
+	display: flex;
+			 background-color: #a7d3f1;
+			height: 100vh;
+
+}
+
+.Purchase-container{
+	padding: 30px;
+	display: flex;
+border: 2px solid red;
+width: 100%;
+justify-content: space-between;
+}
