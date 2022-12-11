@@ -4,13 +4,15 @@ import erc20abi from "../Erc20Abi.json";
 import TxList from "../Txlist";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../styles/Wallet.css";
-import Table from "@mui/material/Table";
-import TableBody from "@mui/material/TableBody";
-import TableCell from "@mui/material/TableCell";
-import TableContainer from "@mui/material/TableContainer";
-import TableHead from "@mui/material/TableHead";
-import TableRow from "@mui/material/TableRow";
-import Paper from "@mui/material/Paper";
+import Table from 'react-bootstrap/Table';
+import Button from 'react-bootstrap/Button';
+// import Table from "@mui/material/Table";
+// import TableBody from "@mui/material/TableBody";
+// import TableCell from "@mui/material/TableCell";
+// import TableContainer from "@mui/material/TableContainer";
+// import TableHead from "@mui/material/TableHead";
+// import TableRow from "@mui/material/TableRow";
+// import Paper from "@mui/material/Paper";
 import { Link } from "react-router-dom";
 import Sidebar from "../components/Sidebar"
 
@@ -139,94 +141,155 @@ const Wallet = () => {
   };
 
   return (
-    <div className="wallet">
-      <div>
-        <div className="wallet-container">
-          <Sidebar />
-          <div className="main-container">
-            <div className="top-container">
-              <div className="top">
-                <div className="total">
-                  <p>Total Balance</p>
-                  <h2>NGN 500,000,000</h2>
-                </div>
-                <div className="fiat-btn">
-                  <Link to="/page/DepositFiat">
-                    <button>Deposit Fiat</button>
-                  </Link>
-                </div>
-              </div>
 
-              <div className="purchase-row">
-                <div className="crypto-purchase">
-                  <img src="../images/buy.png" alt="crypyo" className="w-100" />
-                  <Link to="/page/BuyCrypto">
-                    <p>Buy Ace Token</p>
-                  </Link>
-                </div>
-                <div className="crypto-purchase">
-                  <img
-                    src="../images/sell.png"
-                    alt="crypyo"
-                    className="w-100"
-                  />
-                  <Link to="/page/BuyCrypto">
-                    <p>Sell Ace Token</p>
-                  </Link>
-                </div>
-                <div className="crypto-purchase">
-                  <img
-                    src="../images/loan.png"
-                    alt="crypyo"
-                    className="w-100"
-                  />
-                  <Link to="/page/BuyCrypto">
-                    <p>Loan Ace Token</p>
-                  </Link>
-                </div>
+    <div className=" wallet">
+
+      <div className="container-fluid  wallet-container">
+        <Sidebar />
+        <div className="main-container">
+          <div className="top-container">
+            <div className=" row top">
+              <div className=" col-md-9 total">
+                <p>Total Balance</p>
+                <h2>NGN 500,000,000</h2>
+              </div>
+              <div className="col-md-3 fiat-btn">
+                <Link to="/page/DepositFiat">
+                  <Button variant="primary" size="md" className="px-4 rounded-4">
+                    Deposit Fiat
+                  </Button>
+                </Link>
               </div>
             </div>
 
-            <div className="Assets-record">
-              <div className="Assets-record-header">
-                <p>ASSETS</p>
-                <div className="Assets-record-toggle">
-                  <button>TOKENS</button>
-                  <button>NFTs</button>
-                </div>
+            <div className="purchase-row">
+
+              <div className="crypto-purchase">
+                <img src="../images/buy.png" alt="crypyo" className="w-100" />
+                <Link to="/page/BuyCrypto">
+                  <Button variant="outline-primary" size="md" className="px-4 token rounded-4">
+                    Buy Ace Token
+                  </Button>
+                </Link>
               </div>
-              <>
-                <TableContainer component={Paper}>
-                  <Table sx={{ minWidth: 650 }} aria-label="simple table">
-                    <TableHead>
-                      <TableRow>
-                        <TableCell>Tokens</TableCell>
-                        <TableCell align="right">Price</TableCell>
-                        <TableCell align="right">Balance</TableCell>
+              <div className="crypto-purchase">
+                <img
+                  src="../images/sell.png"
+                  alt="crypyo"
+                  className="w-100"
+                />
+                <Link to="/page/BuyCrypto">
+                  <Button variant="outline-primary" size="md" className="px-4 token rounded-4">
+                    Sell Ace Token
+                  </Button>
+                </Link>
+              </div>
+              <div className="crypto-purchase">
+                <img
+                  src="../images/loan.png"
+                  alt="crypyo"
+                  className="w-100"
+                />
+                <Link to="/page/BuyCrypto">
+                  <Button variant="outline-primary" size="md" className="px-4 token rounded-4">
+                    Loan Ace Token
+                  </Button>
+                </Link>
+              </div>
+            </div>
+          </div>
+
+          <div className="Assets-record">
+            <div className="Assets-record-header">
+              <p>Assets</p>
+              <div className="Assets-record-toggle">
+                <Button variant="outline-secondary " size="md" className="p-0 pe-4 rounded-4">
+                  <Button variant="primary" size="md" className="px-4 rounded-4">
+                    Token
+                  </Button>
+                  NFT
+                </Button>
+              </div>
+            </div>
+            <Table className="bg-white" responsive>
+              <thead>
+                <tr>
+                  <th>#</th>
+                  {/* {Array.from({ length: 3 }).map((_, index) => ( */}
+                  <th>Token</th>
+                  <th>Price</th>
+                  <th>Balance</th>
+                  {/* ))} */}
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td>DAI</td>
+                  <td>$1.00</td>
+                  <td>NGN 5000.00</td>
+
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>ETH</td>
+                  <td>$1.00</td>
+                  <td>NGN 5000.00</td>
+                </tr>
+                <tr>
+                <td>3</td>
+                  <td>ENS</td>
+                  <td>$1.00</td>
+                  <td>NGN 5000.00</td>
+                </tr>
+                <tr>
+                 
+                  <td>4</td>
+                  <td>KNCL</td>
+                  <td>$1.00</td>
+                  <td>NGN 5000.00</td>
+                </tr>
+                <tr>
+                <td>5</td>
+                  <td>USDC</td>
+                  <td>$1.00</td>
+                  <td>NGN 5000.00</td>
+                </tr>
+              </tbody>
+            </Table>
+
+            {/* <>
+              <TableContainer component={Paper}>
+                <Table sx={{ minWidth: 650 }} aria-label="simple table">
+                  <TableHead>
+                    <TableRow>
+                      <TableCell>Tokens</TableCell>
+                      <TableCell align="right">Price</TableCell>
+                      <TableCell align="right">Balance</TableCell>
+                    </TableRow>
+                  </TableHead>
+                  <TableBody>
+                    {rows.map((row) => (
+                      <TableRow
+                        key={row.name}
+                        sx={{
+                          "&:last-child td, &:last-child th": { border: 0 },
+                        }}>
+                        <TableCell component="th" scope="row">
+                          {row.name}
+                        </TableCell>
+                        <TableCell align="right">{row.calories}</TableCell>
+                        <TableCell align="right">{row.fat}</TableCell>
                       </TableRow>
-                    </TableHead>
-                    <TableBody>
-                      {rows.map((row) => (
-                        <TableRow
-                          key={row.name}
-                          sx={{
-                            "&:last-child td, &:last-child th": { border: 0 },
-                          }}>
-                          <TableCell component="th" scope="row">
-                            {row.name}
-                          </TableCell>
-                          <TableCell align="right">{row.calories}</TableCell>
-                          <TableCell align="right">{row.fat}</TableCell>
-                        </TableRow>
-                      ))}
-                    </TableBody>
-                  </Table>
-                </TableContainer>
-              </>
-            </div>
+                    ))}
+                  </TableBody>
+                </Table>
+              </TableContainer>
+            </> */}
           </div>
         </div>
       </div>
+
     </div>
   );
 };

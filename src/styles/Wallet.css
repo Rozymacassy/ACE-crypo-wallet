@@ -49,7 +49,16 @@
 .Assets-record-header{
     display: flex;
     justify-content: space-between;
+    margin-bottom:3em ;
 }
+.token{
+display: block;
+margin: 20px auto;
+text-decoration: none;
+
+}
+
+
 @media screen and (max-width: 600px) {
     h1{
         font-size: 23px;
