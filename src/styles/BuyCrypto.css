@@ -1,14 +1,56 @@
 .CryptoPurchase{
 	display: flex;
-			 background-color: #a7d3f1;
-			height: 100vh;
-
+	background-color: #a7d3f1;
+	height: 100vh;
+}
+.Purchase-container{
+	width: 100%;
+	height: 100vh;
+}
+.buyandsell{
+	display:flex;
+	justify-content: space-around;
+	width: 100%;
+	margin: 2em;
+	
+}
+.purchase button{
+	border: 1px solid;
+	padding:5px 30px;
+	border-radius: 10px;
 }
 
-.Purchase-container{
-	padding: 30px;
+.buyace{
+	margin-top: 30px;
+}
+
+.tokenname{
+	padding: 20px ;
+	background-color: #fff;
+	width: 50%;
+	border-radius: 8px;
 	display: flex;
-border: 2px solid red;
-width: 100%;
-justify-content: space-between;
+	justify-content: space-around;
+	box-shadow: 0px 4px 20px rgb(11 34 57 / 12%);
+}    
+.tokenInfo{
+	display: flex;
+}
+.tokenInfo label{
+	font-size: 25px;
+	font-weight: 700;
+}
+.buytoken{
+
+	background-color: #a7d3f1;
+	padding: 20px;
+	text-align: center;	
+}
+.pay{
+	border: 1px solid red;
+	width: 100%;
+	background-color: white;
+	display: flex;
+
+
 }

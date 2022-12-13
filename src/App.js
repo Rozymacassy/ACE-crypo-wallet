@@ -8,6 +8,7 @@ import Wallet from './pages/Wallet';
 import DepositFiat from './pages/DepositFiat';
 import DepositAmount from './pages/DepositAmount';
 import BuyCrypto from './pages/BuyCrypto';
+import SellCrypto from './pages/SellCrypto';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
           <Route exact path="/page/DepositFiat" element={<DepositFiat />} />
           <Route exact path="/page/DepositAmount" element={<DepositAmount />} />
           <Route exact path="/page/BuyCrypto" element={<BuyCrypto />} />
+          <Route exact path="/page/SellCrypto" element={<SellCrypto />} />
         </Routes>
       </div>
     </Router>
