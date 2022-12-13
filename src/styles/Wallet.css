@@ -3,25 +3,27 @@
 
 .wallet-container{
     display: flex;
-    background-color: #a7d3f1;
+    background-color: #ffff;
+    max-width:100%;
+    
   
    
 }
 .main-container{
    
     padding: 30px;
-    width: 80%;
+    width: 100%;
     margin-left: 50px;
 }
 .sidebar{
-    background-color: #fff;
+    background-color: #a7d3f1;
     padding: 30px;
     height:100%;
 }
 
-.top-container button{
+/* .top-container button{
     border-radius: 5px;
-}
+} */
 .top{
     display: flex;
     align-items: center;
@@ -32,17 +34,16 @@
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 30px;
 }
-.purchase-row p{
+/* .purchase-row p{
     text-align: center;
-    background-color: #fff;
     padding: 30px;
     border-radius: 5px;
-}
+} */
 
-.crypto-purchase img{
+/* .crypto-purchase img{
     width: 100%;
     height: auto;
-}
+} */
 .Assets-record{
    margin:40px 0;
 }
@@ -53,8 +54,6 @@
 }
 .token{
 display: block;
-margin: 20px auto;
-text-decoration: none;
 
 }
 

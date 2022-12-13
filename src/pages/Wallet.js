@@ -4,15 +4,15 @@ import erc20abi from "../Erc20Abi.json";
 import TxList from "../Txlist";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../styles/Wallet.css";
-import Table from 'react-bootstrap/Table';
+// import Table from 'react-bootstrap/Table';
 import Button from 'react-bootstrap/Button';
-// import Table from "@mui/material/Table";
-// import TableBody from "@mui/material/TableBody";
-// import TableCell from "@mui/material/TableCell";
-// import TableContainer from "@mui/material/TableContainer";
-// import TableHead from "@mui/material/TableHead";
-// import TableRow from "@mui/material/TableRow";
-// import Paper from "@mui/material/Paper";
+import Table from "@mui/material/Table";
+import TableBody from "@mui/material/TableBody";
+import TableCell from "@mui/material/TableCell";
+import TableContainer from "@mui/material/TableContainer";
+import TableHead from "@mui/material/TableHead";
+import TableRow from "@mui/material/TableRow";
+import Paper from "@mui/material/Paper";
 import { Link } from "react-router-dom";
 import Sidebar from "../components/Sidebar"
 
@@ -144,7 +144,7 @@ const Wallet = () => {
 
     <div className=" wallet">
 
-      <div className="container-fluid  wallet-container">
+      <div className="container  wallet-container">
         <Sidebar />
         <div className="main-container">
           <div className="top-container">
@@ -155,43 +155,43 @@ const Wallet = () => {
               </div>
               <div className="col-md-3 fiat-btn">
                 <Link to="/page/DepositFiat">
-                  <Button variant="primary" size="md" className="px-4 rounded-4">
+                  <Button variant="primary" size="sm" className="px-4 rounded-4">
                     Deposit Fiat
                   </Button>
                 </Link>
               </div>
             </div>
 
-            <div className="purchase-row">
+            <div className=" purchase-row">
 
-              <div className="crypto-purchase">
-                <img src="../images/buy.png" alt="crypyo" className="w-100" />
+              <div className=" crypto-purchase">
+                <img src="../images/Buy1.png" alt="crypyo" className="w-50" />
                 <Link to="/page/BuyCrypto">
-                  <Button variant="outline-primary" size="md" className="px-4 token rounded-4">
+                  <Button variant="outline-primary" size="sm" className="px-2 token rounded-4">
                     Buy Ace Token
                   </Button>
                 </Link>
               </div>
-              <div className="crypto-purchase">
+              <div className=" crypto-purchase">
                 <img
-                  src="../images/sell.png"
+                  src="../images/Sell1.png"
                   alt="crypyo"
-                  className="w-100"
+                  className="w-50"
                 />
                 <Link to="/page/BuyCrypto">
-                  <Button variant="outline-primary" size="md" className="px-4 token rounded-4">
+                  <Button variant="outline-primary" size="sm" className="px-2  token rounded-4">
                     Sell Ace Token
                   </Button>
                 </Link>
               </div>
-              <div className="crypto-purchase">
+              <div className=" crypto-purchase">
                 <img
-                  src="../images/loan.png"
+                  src="../images/Loan1.png"
                   alt="crypyo"
-                  className="w-100"
+                  className="w-50"
                 />
                 <Link to="/page/BuyCrypto">
-                  <Button variant="outline-primary" size="md" className="px-4 token rounded-4">
+                  <Button variant="outline-primary" size="sm" className="px-2 token rounded-4">
                     Loan Ace Token
                   </Button>
                 </Link>
@@ -211,15 +211,13 @@ const Wallet = () => {
                 </Button>
               </div>
             </div>
-            <Table className="bg-white" responsive>
+            {/* <Table className="bg-white" responsive>
               <thead>
                 <tr>
                   <th>#</th>
-                  {/* {Array.from({ length: 3 }).map((_, index) => ( */}
                   <th>Token</th>
                   <th>Price</th>
                   <th>Balance</th>
-                  {/* ))} */}
                 </tr>
               </thead>
               <tbody>
@@ -237,28 +235,29 @@ const Wallet = () => {
                   <td>NGN 5000.00</td>
                 </tr>
                 <tr>
-                <td>3</td>
+                  <td>3</td>
                   <td>ENS</td>
                   <td>$1.00</td>
                   <td>NGN 5000.00</td>
                 </tr>
                 <tr>
-                 
+
                   <td>4</td>
                   <td>KNCL</td>
                   <td>$1.00</td>
                   <td>NGN 5000.00</td>
                 </tr>
                 <tr>
-                <td>5</td>
+                  <td>5</td>
                   <td>USDC</td>
                   <td>$1.00</td>
                   <td>NGN 5000.00</td>
                 </tr>
               </tbody>
-            </Table>
+            </Table> */}
 
-            {/* <>
+            <>
+            
               <TableContainer component={Paper}>
                 <Table sx={{ minWidth: 650 }} aria-label="simple table">
                   <TableHead>
@@ -285,7 +284,7 @@ const Wallet = () => {
                   </TableBody>
                 </Table>
               </TableContainer>
-            </> */}
+            </>
           </div>
         </div>
       </div>
