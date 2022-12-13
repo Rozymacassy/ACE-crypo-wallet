@@ -3,14 +3,17 @@ import Sidebar from "../components/Sidebar";
 import "../styles/BuyCrypto.css"
 import { ethers } from "ethers";
 import erc20abi from "../Erc20Abi.json";
-import TxList from "../Txlist";
 import { Link } from "react-router-dom";
+import TxList from "../Txlist";
+import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
 
 
-const BuyCrypto = () => {
+const SellCrypto = () => {
     const [txs, setTxs] = useState([]);
     const [contractListened, setContractListened] = useState();
     const [error, setError] = useState();
+    const [walletaddress,setWalletAddress] = useState("")
 
 
     const [contractInfo, setContractInfo] = useState({
@@ -24,38 +27,26 @@ const BuyCrypto = () => {
       balance: "-"
     });
 
-  // async function requestAccount() {
-  //   console.log("requesting account");
-  //   if (window.ethereum) {
-  //     console.log("detected");
-  //   }
-  //   try {
-  //     const accounts = await window.ethereum.request({
-  //       method: "eth_requestAccounts",
-  //     });
-  //     console.log(accounts);
-  //     setWalletAddress(accounts[0]);
-  //   } catch (error) {
-  //     console.log("Error gettin wallet");
-  //   }
-  // }
-  // async function connectWallet() {
-  //   if (window.ethereum !== "undefined") { 
-  //     await requestAccount();
-  //   }
-  // }
-  // const handlepayment=(e) =>{
-  //   e.preventDefault()
-  //   setPayment(payment)
-  // }
-  // const handleAddress=(e) =>{
-  //   e.preventDefault()
-  //   setAddress(address)
-  // }
-  // const handleAce=(e) =>{
-  //   e.preventDefault()
-  //   setAce(ace)
-  // }
+  async function requestAccount() {
+    console.log("requesting account");
+    if (window.ethereum) {
+      console.log("detected");
+    }
+    try {
+      const accounts = await window.ethereum.request({
+        method: "eth_requestAccounts",
+      });
+      console.log(accounts);
+      setWalletAddress(accounts[0]);
+    } catch (error) {
+      console.log("Error gettin wallet");
+    }
+  }
+  async function connectWallet() {
+    if (window.ethereum !== "undefined") { 
+      await requestAccount();
+    }
+  }
 
   useEffect(() => {
     if (contractInfo.address !== "-") {
@@ -136,6 +127,7 @@ const BuyCrypto = () => {
 
     <div className="CryptoPurchase">
       <Sidebar />
+      
       <div className="Purchase-container">
         <div className="buyandsell">
           <div className="blankdiv">
@@ -146,8 +138,9 @@ const BuyCrypto = () => {
           <Link to="/page/BuyCrypto"><button>Buy</button></Link>
           <Link to="/page/SellCrypto"><button>Sell</button></Link>
           </div>
+          
         </div>
-         <form className="m-4" onSubmit={handleSubmit}>
+        <form className="m-4" onSubmit={handleSubmit}>
         <div className="">
           <main className="mt-4 p-4">
            
@@ -164,31 +157,7 @@ const BuyCrypto = () => {
               </div>
             </div>
           </main>
-          <footer className="p-4">
-            <button
-              type="submit"
-              className="btn btn-primary submit-button focus:ring focus:outline-none w-full"
-            >
-              Get Wallet Information
-            </button>
-          </footer>
-          <div className="px-4">
-            <div className="overflow-x-auto">
-
-              <div className="tokenInfo">
-                <div className="tokenname"> 
-                  <label>Token Name</label>
-                  <h5>{contractInfo.tokenName}</h5>
-                </div>
-                <div className="tokenname"> 
-                  <label>Token Symbol</label>
-                  <h5>{contractInfo.tokenSymbol}</h5>
-                </div>
-          
-              </div>
-              
-            </div>
-          </div>
+       
           <div className="p-4">
             <button
               onClick={getMyBalance}
@@ -217,57 +186,39 @@ const BuyCrypto = () => {
           </div>
         </div>
       </form>
-
-      <form onSubmit={handleTransfer}>
-        <div className="buytoken">
-          <h4 style={{textAlign:"center", fontWeight:"700"}}>Start your journey with some Ace Token</h4>
-              <div className="pay">
-                <input
-                  type="text"
-                  name="recipient"
-                  className="buy"
-                  id="fiat"
-                  placeholder="Pay 0:00"
-                  required
-                
-                />
-              </div>
-              <div className="pay">
-                <input
-                  type="text"
-                  name="amount"
-                  className="buy"
-                  id="Buy"
-                  placeholder="Buy 0:00"
-                  required
-                />
-              </div>
-              <div className="pay">
-                <input
-                  type="text"
-                  name="amount"
-                  className="buy"
-                  id="address"
-                  placeholder="Address to transfer"
-                  required
-                />
-              </div>
-              <footer className="p-4">
-                <button
-                  type="submit"
-                  className="btn btn-primary submit-button focus:ring focus:outline-none w-full"
-                >
-                  Transfer
-                </button>
-              </footer>
-            </div>
-          </form>
       
+        <div className="salesform">
+       
+            <Form>
+            <Form.Group className="mb-3" controlId="formBasicEmail">
+                <Form.Label>Enter Wallet Address</Form.Label>
+                <Form.Control type="text" placeholder="Enter wallet Address" />
+                <Form.Text className="text-muted">
+                The wallet Address of your contract
+                </Form.Text>
+            </Form.Group>
+
+            <Form.Group className="mb-3" controlId="formBasicPassword">
+                <Form.Label>Token Price</Form.Label>
+                <Form.Control type="text" placeholder="Password" />
+            </Form.Group>
+
+            
+            <Form.Group className="mb-3" controlId="formBasicPassword">
+                <Form.Label>Token value</Form.Label>
+                <Form.Control type="text" placeholder="Password" />
+            </Form.Group>
+            
+            <Button variant="primary" size="lg">
+                Connect to external wallet
+            </Button>
+        </Form>
         </div>
-      </div>
+        </div>
+    </div>
 
 
   );
 };
 
-export default BuyCrypto;
+export default SellCrypto;

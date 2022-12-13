@@ -102,13 +102,6 @@
 		"type": "function"
 	},
 	{
-		"inputs": [],
-		"name": "send",
-		"outputs": [],
-		"stateMutability": "payable",
-		"type": "function"
-	},
-	{
 		"inputs": [
 			{
 				"internalType": "address",
@@ -200,19 +193,6 @@
 			}
 		],
 		"name": "allowance",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "amount",
 		"outputs": [
 			{
 				"internalType": "uint256",
