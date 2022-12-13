@@ -4,6 +4,7 @@ import "../styles/BuyCrypto.css"
 import { ethers } from "ethers";
 import erc20abi from "../Erc20Abi.json";
 import TxList from "../Txlist";
+import Form from 'react-bootstrap/Form';
 import { Link } from "react-router-dom";
 
 
@@ -143,7 +144,7 @@ const BuyCrypto = () => {
           </div>
 
           <div className="purchase">
-          <Link to="/page/BuyCrypto"><button>Buy</button></Link>
+          <Link to="/page/BuyCrypto"><button>Deposit</button></Link>
           <Link to="/page/SellCrypto"><button>Sell</button></Link>
           </div>
         </div>
@@ -218,9 +219,12 @@ const BuyCrypto = () => {
         </div>
       </form>
 
-      <form onSubmit={handleTransfer}>
+      
         <div className="buytoken">
           <h4 style={{textAlign:"center", fontWeight:"700"}}>Start your journey with some Ace Token</h4>
+          <h4 style={{textAlign:"center", fontWeight:"700"}}>Deposit Crypto to a wallet</h4>
+          {/* <button>Click to see address to transfer to</button>
+            <h1>Wallet Address: 0xD8753d6caDED2336b70D152Cd82A1dA5Eb74085B</h1>  */}
               <div className="pay">
                 <input
                   type="text"
@@ -228,9 +232,16 @@ const BuyCrypto = () => {
                   className="buy"
                   id="fiat"
                   placeholder="Pay 0:00"
+                  disabled
                   required
                 
                 />
+                <Form.Select aria-label="Default select example">
+                  <option>Open this select menu</option>
+                  <option value="NGN">NGN</option>
+                  <option value="USD">USD</option>
+                  <option value="POUNDS">POUNDS</option>
+                </Form.Select>
               </div>
               <div className="pay">
                 <input
@@ -238,19 +249,52 @@ const BuyCrypto = () => {
                   name="amount"
                   className="buy"
                   id="Buy"
+                  disabled
                   placeholder="Buy 0:00"
                   required
                 />
+                 <Form.Select aria-label="Default select example">
+                  <option>Open this select menu</option>
+                  <option value="ETH">ETH</option>
+                  <option value="ACE">ACE</option>
+                  <option value="BTC">BTC</option>
+                </Form.Select>
               </div>
+              <form onSubmit={handleTransfer}>
               <div className="pay">
-                <input
+              <input
                   type="text"
-                  name="amount"
                   className="buy"
+                  disabled
                   id="address"
                   placeholder="Address to transfer"
                   required
                 />
+                <input
+                  type="text"
+                  className="buy"
+                  name="recipient"
+                  required
+                />
+               
+              </div>
+              <div className="pay">
+              <input
+                  type="text"
+                  name="amount"
+                  className="buy"
+                  disabled
+                  id="address"
+                  placeholder="Amount of ace token to transfer"
+                  required
+                />
+                <input
+                  type="text"
+                  name="amount"
+                  className="buy"
+                  required
+                />
+               
               </div>
               <footer className="p-4">
                 <button
@@ -260,9 +304,21 @@ const BuyCrypto = () => {
                   Transfer
                 </button>
               </footer>
+              </form>
             </div>
-          </form>
-      
+            <div>
+            <div className="m-4 credit-card w-full lg:w-3/4 sm:w-auto shadow-lg mx-auto rounded-xl bg-white">
+              <div className="mt-4 p-4">
+                <h1 className="text-xl font-semibold text-gray-700 text-center">
+                  Recent transactions
+                </h1>
+                <p>
+                  <TxList txs={txs} />
+              </p>
+              </div>
+            </div>
+          </div>
+        
         </div>
       </div>
 
