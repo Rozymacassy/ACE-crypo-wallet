@@ -1,7 +1,6 @@
 import './styles/App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Home from './components/Home';
-// import Nav from './components/Nav';
 import Connect from './pages/Connect';
 import Welcome from './pages/Welcome';
 import Dashboard from './pages/Dashboard';
