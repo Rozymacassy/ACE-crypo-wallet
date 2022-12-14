@@ -150,7 +150,7 @@ const BuyCrypto = () => {
         </div>
         <form className="m-4" onSubmit={handleSubmit}>
           <div className="">
-            <main className="mt-4 p-4">
+            <main className="p-4">
 
               <div className="">
                 <h2 style={{ textAlign: "center", fontWeight: "700" }}>Let's Start with your Ace Wallet Information</h2>

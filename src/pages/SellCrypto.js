@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import Sidebar from "../components/Sidebar";
-import "../styles/SellCrypto.css"
+import "../styles/BuyCrypto.css"
 import { ethers } from "ethers";
 import erc20abi from "../Erc20Abi.json";
 import { Link } from "react-router-dom";
@@ -137,14 +137,14 @@ const SellCrypto = () => {
           </div>
 
           <div className="purchase">
-            <Link to="/page/BuyCrypto"><button className="mx-3">Transfer</button></Link>
+            <Link to="/page/BuyCrypto"><button className="mx-3" >Transfer</button></Link>
             <Link to="/page/SellCrypto"><button>Receive</button></Link>
           </div>
 
         </div>
         <form className="m-4" onSubmit={handleSubmit}>
-          <div className="addr">
-            <main className="mt-4 p-4">
+          <div className="">
+            <main className="px-4">
 
               <div className="">
                 <h2 style={{ textAlign: "center", fontWeight: "700" }}>Let's Start with your Ace Wallet Information</h2>
@@ -176,12 +176,14 @@ const SellCrypto = () => {
                     <label>Wallet Address</label>
                     <h5>{balanceInfo.address}</h5>
                   </div>
-                  <div className="tokenname mx-3">
-                    <label >Wallet Balance</label>
+                  <div className="tokenname">
+                    <label>Wallet Balance</label>
                     <h5>{balanceInfo.balance}</h5>
                   </div>
 
                 </div>
+
+
               </div>
             </div>
           </div>
@@ -189,31 +191,11 @@ const SellCrypto = () => {
 
         <div className="salesform">
 
-          <Form>
-            <Form.Group className="mb-3" controlId="formBasicEmail">
-              <Form.Label>Enter Wallet Address</Form.Label>
-              <Form.Control type="text" placeholder="Enter wallet Address" />
-              <Form.Text className="text-muted">
-                The wallet Address of your contract
-              </Form.Text>
-            </Form.Group>
-
-            <Form.Group className="mb-3" controlId="formBasicPassword">
-              <Form.Label>Token Price</Form.Label>
-              <Form.Control type="text" placeholder="Password" />
-            </Form.Group>
 
 
-            <Form.Group className="mb-3" controlId="formBasicPassword">
-              <Form.Label>Token value</Form.Label>
-              <Form.Control type="text" placeholder="Password" />
-            </Form.Group>
-
-            <Button variant="primary" size="md">
-              Connect to external wallet
-            </Button>
-     
-        </div>
+          <Button variant="primary" size="md" className="ms-5" onClick={connectWallet} >
+            Connect to external wallet
+          </Button>
 
         </div>
       </div>

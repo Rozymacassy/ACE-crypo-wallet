@@ -26,7 +26,7 @@ return (
                 </div>
         
                 <Link to="/page/Home">
-                <Button variant="primary" size="md">LOGIN
+                <Button variant="primary" size="md"className='log'>LOGIN
                 </Button>
 
                 </Link>

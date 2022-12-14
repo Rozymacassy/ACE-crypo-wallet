@@ -1,49 +1,50 @@
+.form-box {
+  width: 50%;
+  text-align: center;
+  margin: 200px 400px 0 400px;
 
-    .form-box{
-        width: 50%;
-        text-align: center;
-        margin: 200px 400px 0 400px;
-       
-        padding: 20px;
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-       
-        background-color: #a7d3f1;
-        border-radius: 2%;
-        
-    }
-  .header-form{
-    margin-bottom:15px;
-  }
-.form-control{
-    padding: 30px !important;
-  }
-  button{
-    margin-top:40px;
-    margin-bottom:10px;
-    width: 50%;
-    padding: 20px;
-    
-  }
-  .message{
-    display:flex;
-    justify-content:space-between
-  }
-  .social{
-    display:flex;
-    justify-content:space-around;
-    padding:30px;
-  }
-  
-  .social i{
-    font-size:35px;
-  }
-  
-  .social i:hover{
-    color:red;
-    cursor:pointer;
-  }
-  
-  
-  
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+
+  background-color: #a7d3f1;
+  border-radius: 2%;
+
+}
+
+.header-form {
+  margin-bottom: 15px;
+}
+
+.form-control {
+  padding: 30px !important;
+}
+
+.log{
+  margin-top: 40px;
+  margin-bottom: 10px;
+  width: 50%;
+  padding: 20px;
+
+}
+
+.message {
+  display: flex;
+  justify-content: space-between
+}
+
+.social {
+  display: flex;
+  justify-content: space-around;
+  padding: 30px;
+}
+
+.social i {
+  font-size: 35px;
+}
+
+.social i:hover {
+  color: red;
+  cursor: pointer;
+}
