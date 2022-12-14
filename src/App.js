@@ -10,6 +10,7 @@ import DepositAmount from './pages/DepositAmount';
 import BuyCrypto from './pages/BuyCrypto';
 import SellCrypto from './pages/SellCrypto';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Login from './pages/Login';
 
 function App() {
   return (
@@ -19,7 +20,8 @@ function App() {
         {/* <Home /> */}
 
         <Routes>
-          <Route exact path="/" element={<Home />} />
+          
+          <Route exact path="/page/Home" element={<Home />} />
           <Route exact path="/Welcome" element={<Welcome />} />
           <Route exact path="/page/Connect" element={<Connect />} />
           <Route exact path="/page/Dashboard" element={<Dashboard />} />
@@ -28,6 +30,7 @@ function App() {
           <Route exact path="/page/DepositAmount" element={<DepositAmount />} />
           <Route exact path="/page/BuyCrypto" element={<BuyCrypto />} />
           <Route exact path="/page/SellCrypto" element={<SellCrypto />} />
+          <Route exact path="/" element={<Login />} />
         </Routes>
       </div>
     </Router>

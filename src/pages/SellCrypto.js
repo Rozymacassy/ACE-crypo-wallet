@@ -45,6 +45,8 @@ const SellCrypto = () => {
   async function connectWallet() {
     if (window.ethereum !== "undefined") { 
       await requestAccount();
+
+      const provider = new ethers.providers.Web3Provider(window.ethereum)
     }
   }
 
@@ -189,30 +191,12 @@ const SellCrypto = () => {
       
         <div className="salesform">
        
-            <Form>
-            <Form.Group className="mb-3" controlId="formBasicEmail">
-                <Form.Label>Enter Wallet Address</Form.Label>
-                <Form.Control type="text" placeholder="Enter wallet Address" />
-                <Form.Text className="text-muted">
-                The wallet Address of your contract
-                </Form.Text>
-            </Form.Group>
-
-            <Form.Group className="mb-3" controlId="formBasicPassword">
-                <Form.Label>Token Price</Form.Label>
-                <Form.Control type="text" placeholder="Password" />
-            </Form.Group>
-
+           
             
-            <Form.Group className="mb-3" controlId="formBasicPassword">
-                <Form.Label>Token value</Form.Label>
-                <Form.Control type="text" placeholder="Password" />
-            </Form.Group>
-            
-            <Button variant="primary" size="lg">
+            <Button variant="primary" size="lg" onClick={connectWallet} >
                 Connect to external wallet
             </Button>
-        </Form>
+     
         </div>
         </div>
     </div>
