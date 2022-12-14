@@ -31,13 +31,18 @@ const Sidebar = () => {
             <BiNotification size="20" className="me-2" />
             Notifications
           </li>
-          <li className="m-2 nav">
-            <SlWallet size="20" className="me-2" /> Wallet
-          </li>
-          <li className="m-2 nav">
-            <GiLinkedRings size="20" className="me-2" />
-            Lend
-          </li>
+          <Link to="/page/Wallet">
+            <li className="m-2 nav">
+              <SlWallet size="20" className="me-2" /> Wallet
+            </li>
+          </Link>
+         
+            <li className="m-2 nav">
+              <GiLinkedRings size="20" className="me-2" />
+              Lend
+            </li>
+         
+          
           <li className="m-2  nav">
             <RiSettingsLine size="20" className="me-2" /> Settings
           </li>
