@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import Sidebar from "../components/Sidebar";
-import "../styles/BuyCrypto.css"
+import "../styles/SellCrypto.css"
 import { ethers } from "ethers";
 import erc20abi from "../Erc20Abi.json";
 import { Link } from "react-router-dom";
@@ -10,22 +10,22 @@ import Form from 'react-bootstrap/Form';
 
 
 const SellCrypto = () => {
-    const [txs, setTxs] = useState([]);
-    const [contractListened, setContractListened] = useState();
-    const [error, setError] = useState();
-    const [walletaddress,setWalletAddress] = useState("")
+  const [txs, setTxs] = useState([]);
+  const [contractListened, setContractListened] = useState();
+  const [error, setError] = useState();
+  const [walletaddress, setWalletAddress] = useState("")
 
 
-    const [contractInfo, setContractInfo] = useState({
-      address: "-",
-      tokenName: "-",
-      tokenSymbol: "-",
-      totalSupply: "-"
-    });
-    const [balanceInfo, setBalanceInfo] = useState({
-      address: "-",
-      balance: "-"
-    });
+  const [contractInfo, setContractInfo] = useState({
+    address: "-",
+    tokenName: "-",
+    tokenSymbol: "-",
+    totalSupply: "-"
+  });
+  const [balanceInfo, setBalanceInfo] = useState({
+    address: "-",
+    balance: "-"
+  });
 
   async function requestAccount() {
     console.log("requesting account");
@@ -43,7 +43,7 @@ const SellCrypto = () => {
     }
   }
   async function connectWallet() {
-    if (window.ethereum !== "undefined") { 
+    if (window.ethereum !== "undefined") {
       await requestAccount();
 
       const provider = new ethers.providers.Web3Provider(window.ethereum)
@@ -108,7 +108,7 @@ const SellCrypto = () => {
     const balance = await erc20.balanceOf(signerAddress);
 
     setBalanceInfo({
-       address: signerAddress,
+      address: signerAddress,
       balance: String(balance)
     });
   };
@@ -129,68 +129,66 @@ const SellCrypto = () => {
 
     <div className="CryptoPurchase">
       <Sidebar />
-      
+
       <div className="Purchase-container">
         <div className="buyandsell">
           <div className="blankdiv">
-           
+
           </div>
 
           <div className="purchase">
-          <Link to="/page/BuyCrypto"><button>Buy</button></Link>
-          <Link to="/page/SellCrypto"><button>Sell</button></Link>
+            <Link to="/page/BuyCrypto"><button className="mx-3">Transfer</button></Link>
+            <Link to="/page/SellCrypto"><button>Receive</button></Link>
           </div>
-          
+
         </div>
         <form className="m-4" onSubmit={handleSubmit}>
-        <div className="">
-          <main className="mt-4 p-4">
-           
-            <div className="">
-              <h2 style={{textAlign:"center", fontWeight:"700"}}>Let's Start with your Ace Wallet Information</h2>
-              <div className="my-3">
-                <input
-                  type="text"
-                  name="addr"
-                  className="input input-bordered block w-full focus:ring focus:outline-none"
-                  value="0xD8753d6caDED2336b70D152Cd82A1dA5Eb74085B"
-                  style={{display:"none"}}
-                />
+          <div className="addr">
+            <main className="mt-4 p-4">
+
+              <div className="">
+                <h2 style={{ textAlign: "center", fontWeight: "700" }}>Let's Start with your Ace Wallet Information</h2>
+                <div className="my-3">
+                  <input
+                    type="text"
+                    name="addr"
+                    className="input input-bordered block w-full focus:ring focus:outline-none"
+                    value="0xD8753d6caDED2336b70D152Cd82A1dA5Eb74085B"
+                    style={{ display: "none" }}
+                  />
+                </div>
+              </div>
+            </main>
+
+            <div className="p-4">
+              <button
+                onClick={getMyBalance}
+                type="submit"
+                className="btn btn-primary submit-button focus:ring focus:outline-none w-full"
+              >
+                Get my balance for my wallet address
+              </button>
+            </div>
+            <div className="px-4">
+              <div className="overflow-x-auto">
+                <div className="tokenInfo">
+                  <div className="tokenname">
+                    <label>Wallet Address</label>
+                    <h5>{balanceInfo.address}</h5>
+                  </div>
+                  <div className="tokenname mx-3">
+                    <label >Wallet Balance</label>
+                    <h5>{balanceInfo.balance}</h5>
+                  </div>
+
+                </div>
               </div>
             </div>
-          </main>
-       
-          <div className="p-4">
-            <button
-              onClick={getMyBalance}
-              type="submit"
-              className="btn btn-primary submit-button focus:ring focus:outline-none w-full"
-            >
-              Get my balance for my wallet address
-            </button>
           </div>
-          <div className="px-4">
-            <div className="overflow-x-auto">
-            <div className="tokenInfo">
-                <div className="tokenname"> 
-                  <label>Wallet Address</label>
-                  <h5>{balanceInfo.address}</h5>
-                </div>
-                <div className="tokenname"> 
-                  <label>Wallet Balance</label>
-                  <h5>{balanceInfo.balance}</h5>
-                </div>
-          
-              </div>
-              
-              
-            </div>
-          </div>
-        </div>
-      </form>
-      
+        </form>
+
         <div className="salesform">
-       
+
            
             
             <Button variant="primary" size="lg" onClick={connectWallet} >
@@ -198,7 +196,9 @@ const SellCrypto = () => {
             </Button>
      
         </div>
+
         </div>
+      </div>
     </div>
 
 

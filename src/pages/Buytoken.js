@@ -50,7 +50,7 @@ const Buytoken = () => {
           <div className="Deposit">
             <p>Deposit With</p>
             <FormControl fullWidth>
-              <InputLabel id="demo-simple-select-label">Age</InputLabel>
+              <InputLabel id="demo-simple-select-label"></InputLabel>
               <Select
                 labelId="demo-simple-select-label"
                 id="demo-simple-select"
