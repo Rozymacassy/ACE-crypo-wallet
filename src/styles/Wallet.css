@@ -3,7 +3,7 @@
 
 .wallet-container{
     display: flex;
-    background-color: #ffff;
+    background-color: #a7d3f1;
     max-width:100%;
     
   
@@ -16,7 +16,7 @@
     margin-left: 50px;
 }
 .sidebar{
-    background-color: #a7d3f1;
+    background-color: #fff;
     padding: 30px;
     height:100%;
 }

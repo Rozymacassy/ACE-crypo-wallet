@@ -1,4 +1,5 @@
 import React from "react";
+import "../styles/DepositFiat.css";
 import Sidebar from "../components/Sidebar";
 import TextField from "@mui/material/TextField";
 
@@ -10,7 +11,7 @@ const DepositAmount = () => {
         <div className="fiatbox">
           <div className="depositfiat">
             <h5 style={{ textAlign: "center" }}>
-              How Much would you like to Deposit
+              How much would you like to deposit
             </h5>
 
             <div className="Currency">

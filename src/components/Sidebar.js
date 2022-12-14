@@ -1,4 +1,5 @@
 import React from 'react'
+import '../styles/Sidebar.css'
 import { Link } from 'react-router-dom';
 import { RiHome5Line } from "react-icons/ri";
 import { RiSettingsLine } from "react-icons/ri";
@@ -14,7 +15,7 @@ const Sidebar = () => {
 		return (
       <div>
         {" "}
-        <div className="sidebar">
+        <div className="bars sidebar">
           <Link to="/">
             <li className="m-2 nav">
               {" "}

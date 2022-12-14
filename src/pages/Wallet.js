@@ -57,7 +57,7 @@ const Wallet = () => {
                 <img src="../images/Buy1.png" alt="crypyo" className="w-50" />
                 <Link to="/page/BuyCrypto">
                   <Button variant="outline-primary" size="sm" className="px-2 token rounded-4">
-                    Buy Ace Token
+                    Transfer Ace Token
                   </Button>
                 </Link>
               </div>
@@ -67,9 +67,9 @@ const Wallet = () => {
                   alt="crypyo"
                   className="w-50"
                 />
-                <Link to="/page/BuyCrypto">
+                <Link to="/page/SellCrypto">
                   <Button variant="outline-primary" size="sm" className="px-2  token rounded-4">
-                    Sell Ace Token
+                    Recieve Ace Token
                   </Button>
                 </Link>
               </div>
