@@ -187,7 +187,7 @@ const SellCrypto = () => {
 
         <div className="salesform">
 
-          <Form>
+          <Form className="w-75 m-2">
             <Form.Group className="mb-3" controlId="formBasicEmail">
               <Form.Label>Enter Wallet Address</Form.Label>
               <Form.Control type="text" placeholder="Enter wallet Address" />
